@@ -56,6 +56,7 @@ legend('Midpoint Rectangle', 'f(x)', 'Midpoint', 'Location', 'northeast');
 grid on;
 hold off;
 
+
 % Point c
 f = @(x) exp(-x.^2);
 a = 1;
