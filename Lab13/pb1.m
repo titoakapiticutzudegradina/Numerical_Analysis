@@ -32,14 +32,16 @@ end
 fprintf('Approximation: %.12f\n', x);
 fprintf('Iterations: %d\n\n', k);
 
-fprintf('Method 3: x_{k+1} = x_k + 1 - x_k * e^{x_k}\n');
+
+fprintf('Method 3: x_{k+1} = x_k + 1 - x_k * exp(x_k)\n');
 x = x0;
 for k = 1:max_iter
-    x_new = x + 1 - x * exp(x);
-    if abs(x_new - x) < epsilon
+    x_new = x+1-x*exp(x);
+    err = abs(x_new - x);        
+    if err < epsilon
         break;
     end
     x = x_new;
 end
-fprintf('Approximation: %.12f\n', x);
-fprintf('Iterations: %d\n', k);
+fprintf('Final Approximation: %.12f\n', x);
+fprintf('Total Iterations: %d\n', k);
